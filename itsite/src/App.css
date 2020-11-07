@@ -1,0 +1,12 @@
+.Display{
+  margin-top: 22%;
+  text-align: center;
+}
+#List{
+  position: fixed;
+  margin-left: 10px;
+}
+#main{
+  margin-left: 140px;
+  margin-top: 10px;
+}
