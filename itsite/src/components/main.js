@@ -2,7 +2,7 @@ import '../App.css';
 import React, { Component } from 'react';
 import {Container, Button} from 'reactstrap'; 
 
-export default class main extends Component{
+export default class Main extends Component{
   constructor(props){
     super(props);
   }

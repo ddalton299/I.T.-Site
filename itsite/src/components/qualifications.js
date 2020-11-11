@@ -1,55 +1,53 @@
 import '../App.css';
-import React, { Component } from 'react';
-import {Table, ListGroup, ListGroupItem} from 'reactstrap'; 
+import React, { useState } from 'react';
+import {Row, Col, ListGroup, ListGroupItem,  Nav, NavItem, NavLink, TabPane, TabContent} from 'reactstrap'; 
+import SkillsIT from './skillsIT';
+import SkillsSoftware from './skillsSoftware';  
 
-class Qual extends Component{
-    constructor(props){
-        super(props); 
+
+const Qual = () =>{
+    
+    const [activeTab, setActiveTab] = useState('1');
+    
+    const toggle = tab => {
+        if(activeTab !== tab) setActiveTab(tab);
     }
-    render(){
+     
         return(
+            
+       
             <div>
             <ListGroup id="List">
                 <ListGroupItem><a href="#Skills_Header">Skills</a></ListGroupItem>
                 <ListGroupItem><a href="#Education_Header">Education</a></ListGroupItem>
                 <ListGroupItem><a href="#Work_Header">Work History</a></ListGroupItem>
-                <ListGroupItem><a href="#">Home Lab</a></ListGroupItem>
+                <ListGroupItem><a href="#">Projects</a></ListGroupItem>
                 <ListGroupItem><a href="#Contact">Contact</a></ListGroupItem>
             </ListGroup>
             <div className = "container" id="main">
                 <h1 id="Skills_Header">Skills</h1>
                 <br/>
-                <div id="Skills_Body">
-                    <Table>
-                        <tbody>
-                        <tr>
-                            <td>Hardware/Software Troubleshooting</td>
-                            <td>Power-shell</td>
-                            <td>Creating and Maintaining Virtual Machines/Virtual Box</td>
-                            <td>Customer Service</td>
-                        </tr>
-                        <tr>
-                            <td>Experienced With Python, JavaScript, Java, C++</td> 
-                            <td>Knowledgeable of the OSI Layer Model</td>
-                            <td>Working in the Linux Terminal</td>
-                            <td>IPv4 & IPv6 Sub-netting</td> 
-                        </tr>
-                        <tr>
-                            <td>Vlan Configuration</td> 
-                            <td>Cisco Switch Configuration</td>
-                            <td>Cisco WLC Configuration</td>
-                            <td>Knowledgeable of Network Cabling Standards</td>
-                        </tr>
-                        <tr>
-                            <td>Windows Server</td>
-                            <td>Active Directory</td>
-                            <td>Network Security</td>
-                            <td>Network Topology</td>
-                        </tr>
-                        </tbody>
-                    </Table>
-                </div>
-                
+
+                <Nav tabs>
+                    <NavItem>
+                        <NavLink onClick={() => {toggle('1'); }} className="1">I.T. Skills</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink onClick={() => {toggle('2'); }} className="2">Software Dev Skills</NavLink>
+                    </NavItem>
+                </Nav>
+                <TabContent activeTab= {activeTab}>
+                    <TabPane tabId="1">
+                        <Row>
+                            <Col><SkillsIT/></Col>
+                        </Row>
+                    </TabPane>
+                    <TabPane tabId="2">
+                        <Row>
+                            <Col><SkillsSoftware/></Col>
+                        </Row>
+                    </TabPane>
+                </TabContent>
                 <h1 id="Education_Header">Education</h1>
                 
                 <br/>
@@ -121,6 +119,4 @@ class Qual extends Component{
         ); 
     }
          
-}
-
 export default Qual; 

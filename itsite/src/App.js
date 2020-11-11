@@ -20,7 +20,6 @@ class App extends Component {
     this.setState({
       renderView: !e.target.value
     });
-    console.log(this.state.renderView);
   };
 
   render(){
