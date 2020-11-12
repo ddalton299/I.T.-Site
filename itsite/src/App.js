@@ -2,36 +2,24 @@ import './App.css';
 import React, { Component } from 'react'; 
 import Qual from './components/qualifications';  
 import Main from './components/main';
-import ReactDOM from 'react-dom';   
+import ProgrammingProjects from './components/programmingProjects' 
+import HomeLab from './components/homeLab'; 
+import { Route, Switch } from 'react-router-dom';
 
+function App(){
 
-class App extends Component {
-  /*
-    A state with the vale renderView to 
-    keep track of which view to component to display. 
-  */
-  state = {
-    renderView: true
-  };
-  /*
-    Function btnclick alters the state to change which component is displayed. 
-  */
-  btnclick = e =>{
-    this.setState({
-      renderView: !e.target.value
-    });
-  };
-
-  render(){
-    /*
-      Switch statement that controls which component is displayed. 
-    */
-    switch(this.state.renderView){
-      case false:
-        return <Qual btnclick={this.btnclick}/>;  
-      default: return <Main btnclick={this.btnclick}/>; 
-    }
-  }  
+    return(
+      <main>
+        <Switch>
+          <Route exact path="/" component={Main}/>
+          <Route exact path="/Qualifications" component={Qual}/>
+          <Route exact path="/ProgrammingProjects" component={ProgrammingProjects}/>
+          <Route exact path="/HomeLab" component={HomeLab}/>
+          <Route component={Error}/>
+        </Switch>
+      </main>
+    ); 
+    
 }
 
 export default App; 

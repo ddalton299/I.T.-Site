@@ -5,8 +5,20 @@
 #List{
   position: fixed;
   margin-left: 10px;
+  margin-right: 10px;
+  
 }
+.borderless{
+  border-top: 0 none;
+}
+
 #main{
-  margin-left: 140px;
+  margin-left: 200px;
   margin-top: 10px;
+}
+.dis{
+  margin-left: 10px;
+}
+.list-group-hover .list-group-item:hover {
+    background-color: #c1d4d6;
 }

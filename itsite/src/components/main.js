@@ -1,6 +1,7 @@
 import '../App.css';
 import React, { Component } from 'react';
 import {Container, Button} from 'reactstrap'; 
+import {Link} from 'react-router-dom'; 
 
 export default class Main extends Component{
   constructor(props){
@@ -16,9 +17,11 @@ export default class Main extends Component{
         </Container>
         <Container className="Display" id="Link">
           <h3>
-            <Button value={true} color="primary" onClick={this.props.btnclick}>
+            <Link to="/Qualifications">
+            <Button value={true} color="primary">
               Learn how I can help you
             </Button>
+            </Link>
           </h3>
         </Container>
         </div>

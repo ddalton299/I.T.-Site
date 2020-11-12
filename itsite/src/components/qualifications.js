@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {Row, Col, ListGroup, ListGroupItem,  Nav, NavItem, NavLink, TabPane, TabContent} from 'reactstrap'; 
 import SkillsIT from './skillsIT';
 import SkillsSoftware from './skillsSoftware';  
-
+import { Link } from 'react-router-dom'; 
 
 const Qual = () =>{
     
@@ -15,14 +15,22 @@ const Qual = () =>{
      
         return(
             
-       
-            <div>
-            <ListGroup id="List">
-                <ListGroupItem><a href="#Skills_Header">Skills</a></ListGroupItem>
-                <ListGroupItem><a href="#Education_Header">Education</a></ListGroupItem>
-                <ListGroupItem><a href="#Work_Header">Work History</a></ListGroupItem>
-                <ListGroupItem><a href="#">Projects</a></ListGroupItem>
-                <ListGroupItem><a href="#Contact">Contact</a></ListGroupItem>
+                <div>
+            <ListGroup id="List" className="list-group-hover">
+                <ListGroupItem className="border-0"><a href="#Skills_Header">Skills</a></ListGroupItem>
+                <ListGroupItem className="border-0"><a href="#Education_Header">Education</a></ListGroupItem>
+                <ListGroupItem className="border-0"><a href="#Work_Header">Work History</a></ListGroupItem>
+                <ListGroupItem className="border-0"><a href="#Contact">Contact</a></ListGroupItem>
+                <ListGroupItem className="border-0">
+                    <Link exact to="/ProgrammingProjects">
+                        Programming Projects
+                    </Link>
+                </ListGroupItem>
+                <ListGroupItem className="border-0">
+                    <Link exact to="/HomeLab">
+                        I.T. Home Lab
+                    </Link>
+                </ListGroupItem>
             </ListGroup>
             <div className = "container" id="main">
                 <h1 id="Skills_Header">Skills</h1>
@@ -115,7 +123,9 @@ const Qual = () =>{
                     <h3>Phone: (304) 544-2675</h3>
                 </div>
             </div>
-            </div>    
+            </div>
+            
+                
         ); 
     }
          
